@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/Administrator/Desktop/**)",
+      "Read(//c/Users/Administrator/**)",
+      "Bash(grep -r backup C:/Users/Administrator/info-collector --include=*.md --include=*.txt)",
+      "Bash(wmic task:*)",
+      "Bash(ls -lad */)",
+      "Read(//c/Users/Administrator/recorder-file/**)",
+      "Bash(ls \"C:\\\\Users\\\\Administrator\\\\Desktop\\\\程序备份\"\" 2>/dev/null && echo \"---\" && ls \"C:UsersAdministratorDesktop绋嬪簭澶囦唤\"\")",
+      "Bash(powershell -WindowStyle Hidden -File \"C:\\\\Users\\\\Administrator\\\\recorder-file\\\\scripts\\\\backup_code.ps1\")",
+      "Bash(powershell -Command \"Remove-Item ''C:\\\\Users\\\\Administrator\\\\Desktop\\\\绋嬪簭澶囦唤'' -Recurse -Force; Write-Host ''done''\")",
+      "Bash(powershell -Command \"Get-ChildItem ''C:\\\\Users\\\\Administrator\\\\Desktop\\\\程序备份\\\\'' | Select-Object Name\")",
+      "Bash(powershell -Command \"Get-Content ''C:\\\\Users\\\\Administrator\\\\Desktop\\\\程序备份\\\\backup_log.txt'' | Select-Object -Last 10\")",
+      "Bash(powershell -Command \"Get-ChildItem ''C:\\\\Users\\\\Administrator\\\\Desktop\\\\'' | Where-Object { $_.Name -like ''*recorder*'' -or $_.Name -like ''*backup*'' }\")",
+      "Bash(powershell -Command \"Get-ChildItem ''C:\\\\Users\\\\Administrator\\\\Desktop\\\\'' | ForEach-Object { $_.Name }\")",
+      "Bash(powershell -Command \"Get-ChildItem ''C:\\\\Users\\\\Administrator\\\\Desktop\\\\程序备份\\\\'' | ForEach-Object { $_.Name }\")",
+      "Bash(powershell -Command \"Get-ChildItem ''C:\\\\Users\\\\Administrator\\\\Desktop\\\\'' -Directory | ForEach-Object { Get-ChildItem $_.FullName -Directory -Filter ''recorder-file*'' }\")",
+      "Bash(powershell -Command \"robocopy ''C:\\\\Users\\\\Administrator\\\\recorder-file'' ''C:\\\\Users\\\\Administrator\\\\Desktop\\\\程序备份\\\\recorder-file'' /E /NP /XD __pycache__ .git venv knowledge_db logs /XF *.pyc *.pyo *.log *.db\")"
+    ]
+  }
+}

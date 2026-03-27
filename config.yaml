@@ -1,0 +1,32 @@
+paths:
+  # 录音文件输入目录（本地或 UNC 网络路径）
+  input_dir: "D:\\icloud\\iCloudDrive\\Desktop\\recorder-file"
+  # 输出目录（与日报同级：D:\SynologyDrive\行业研究\）
+  output_dir: "D:\\SynologyDrive\\行业研究\\访谈纪要"
+  # 知识库存储位置（阶段二激活）
+  knowledge_dir: "C:\\Users\\Administrator\\recorder-file\\knowledge_db"
+
+whisper:
+  model: medium          # tiny / base / small / medium / large-v3
+  language: zh
+  fp16: false            # CPU 推理设 false
+
+ollama:
+  base_url: "http://localhost:11434/v1"
+  api_key: "ollama"
+  model: "qwen2.5:14b"  # 按 ollama list 实际填写
+  timeout: 300
+  max_retries: 3
+  chunk_chars: 3000
+
+cache_file: "C:\\Users\\Administrator\\recorder-file\\processed_cache.json"
+
+audio_extensions:
+  - .mp3
+  - .wav
+  - .m4a
+  - .mp4
+  - .flac
+  - .ogg
+  - .wma
+  - .aac
