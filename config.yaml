@@ -1,8 +1,10 @@
 paths:
   # 录音文件输入目录（本地或 UNC 网络路径）
   input_dir: "D:\\icloud\\iCloudDrive\\Desktop\\recorder-file"
-  # 输出目录（与日报同级：D:\SynologyDrive\行业研究\）
-  output_dir: "D:\\SynologyDrive\\行业研究\\访谈纪要"
+  # 主输出目录（SynologyDrive）
+  output_dir: "D:\\SynologyDrive\\行业研究\\recorder-file output"
+  # 镜像输出目录（iCloud，与主目录保持同步）
+  output_mirror: "D:\\icloud\\iCloudDrive\\Desktop\\recorder-file output"
   # 知识库存储位置（阶段二激活）
   knowledge_dir: "C:\\Users\\Administrator\\recorder-file\\knowledge_db"
 
@@ -14,7 +16,7 @@ whisper:
 ollama:
   base_url: "http://localhost:11434/v1"
   api_key: "ollama"
-  model: "qwen2.5:14b"  # 按 ollama list 实际填写
+  model: "qwen3:14b"  # 按 ollama list 实际填写
   timeout: 300
   max_retries: 3
   chunk_chars: 3000

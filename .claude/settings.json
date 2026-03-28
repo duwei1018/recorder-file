@@ -16,7 +16,34 @@
       "Bash(powershell -Command \"Get-ChildItem ''C:\\\\Users\\\\Administrator\\\\Desktop\\\\'' | ForEach-Object { $_.Name }\")",
       "Bash(powershell -Command \"Get-ChildItem ''C:\\\\Users\\\\Administrator\\\\Desktop\\\\程序备份\\\\'' | ForEach-Object { $_.Name }\")",
       "Bash(powershell -Command \"Get-ChildItem ''C:\\\\Users\\\\Administrator\\\\Desktop\\\\'' -Directory | ForEach-Object { Get-ChildItem $_.FullName -Directory -Filter ''recorder-file*'' }\")",
-      "Bash(powershell -Command \"robocopy ''C:\\\\Users\\\\Administrator\\\\recorder-file'' ''C:\\\\Users\\\\Administrator\\\\Desktop\\\\程序备份\\\\recorder-file'' /E /NP /XD __pycache__ .git venv knowledge_db logs /XF *.pyc *.pyo *.log *.db\")"
+      "Bash(powershell -Command \"robocopy ''C:\\\\Users\\\\Administrator\\\\recorder-file'' ''C:\\\\Users\\\\Administrator\\\\Desktop\\\\程序备份\\\\recorder-file'' /E /NP /XD __pycache__ .git venv knowledge_db logs /XF *.pyc *.pyo *.log *.db\")",
+      "Bash(gh repo:*)",
+      "Bash(where gh:*)",
+      "Bash(powershell -Command \"Get-Command gh -ErrorAction SilentlyContinue | Select-Object Source\")",
+      "Bash(powershell -Command \"cd ''C:\\\\Users\\\\Administrator\\\\recorder-file''; git remote -v\")",
+      "Bash(schtasks /query /fo LIST)",
+      "Bash(ollama list:*)",
+      "Bash(schtasks /query /fo CSV)",
+      "Read(//d/SynologyDrive/行业研究/**)",
+      "Read(//d/icloud/iCloudDrive/Desktop/recorder-file/**)",
+      "Read(//dev/**)",
+      "Bash(powershell -Command \":*)",
+      "Bash(grep \"\\\\.md$\")",
+      "Bash(powershell -Command \"Get-ChildItem ''D:\\\\SynologyDrive\\\\行业研究\\\\recorder-file'' | Select-Object -First 10 | ForEach-Object { $_.Name }\")",
+      "Bash(rm -rf \"D:/SynologyDrive/行业研究/访谈纪要\")",
+      "Bash(echo \"删除结果: $?\")",
+      "Read(//d/SynologyDrive/recorder-file/**)",
+      "Bash(git push:*)",
+      "Read(//d/icloud/iCloudDrive/Desktop//**)",
+      "Bash(robocopy \"C:\\\\Users\\\\Administrator\\\\recorder-file\" \"D:\\\\SynologyDrive\\\\recorder-file\" /E /NP /XD __pycache__ .git venv knowledge_db logs /XF *.pyc *.pyo *.log *.db)",
+      "Bash(robocopy \"C:\\\\Users\\\\Administrator\\\\recorder-file\" \"D:\\\\SynologyDrive\\\\recorder-file\" /E /NP /XD __pycache__ .git venv knowledge_db logs /XF \"*.pyc\" \"*.pyo\" \"*.log\" \"*.db\")",
+      "Bash(powershell -Command \"robocopy ''C:\\\\Users\\\\Administrator\\\\recorder-file'' ''D:\\\\SynologyDrive\\\\recorder-file'' /E /NP /XD __pycache__ .git venv knowledge_db logs /XF ''*.pyc'' ''*.pyo'' ''*.log'' ''*.db''; if \\($LASTEXITCODE -lt 8\\) { Write-Host ''SYNC_OK'' } else { Write-Host ''SYNC_FAIL'' }\")",
+      "Bash(gh --version)",
+      "Bash(gh auth:*)"
+    ],
+    "additionalDirectories": [
+      "D:\\SynologyDrive\\行业研究\\recorder-file output",
+      "D:\\icloud\\iCloudDrive\\Desktop\\recorder-file output"
     ]
   }
 }

@@ -7,6 +7,7 @@ import sys
 import argparse
 import textwrap
 import urllib.request
+import shutil
 from pathlib import Path
 from datetime import datetime
 
@@ -89,11 +90,25 @@ def process_file(audio_path: Path, output_dir: Path, cfg: dict, start_step: int)
         return False
 
 
+# ── 同步到镜像目录 ─────────────────────────────────────────
+def sync_to_mirror(stem: str, output_dir: Path, mirror_dir: Path):
+    """将指定文件的三个输出文件同步到镜像目录"""
+    mirror_dir.mkdir(parents=True, exist_ok=True)
+    suffixes = ["_1_原始转录.md", "_2_对话整理.md", "_3_研究摘要.md"]
+    for suffix in suffixes:
+        src = output_dir / f"{stem}{suffix}"
+        if src.exists():
+            dst = mirror_dir / src.name
+            shutil.copy2(src, dst)
+    log.info(f"  已同步到镜像: {mirror_dir}")
+
+
 # ── 主流程 ────────────────────────────────────────────────
 def run(args):
     cfg = load_config()
     input_dir  = Path(args.input  or cfg["paths"]["input_dir"])
     output_dir = Path(args.output or cfg["paths"]["output_dir"])
+    mirror_dir = Path(cfg["paths"].get("output_mirror", "")) if cfg["paths"].get("output_mirror") else None
     start_step = int(args.step)
 
     log.info("=" * 55)
@@ -143,6 +158,8 @@ def run(args):
             cache[fid] = {"file": audio_path.name, "done": True,
                           "processed_at": datetime.now().isoformat()}
             save_cache(cache, cfg["cache_file"])
+            if mirror_dir:
+                sync_to_mirror(audio_path.stem, output_dir, mirror_dir)
             success += 1
         else:
             failed += 1
