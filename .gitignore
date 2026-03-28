@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+.env
+agent.log
+processed_cache.json
+knowledge_db/
+*.db
+*.duckdb
