@@ -1,12 +1,12 @@
 paths:
-  # 录音文件输入目录（本地或 UNC 网络路径）
-  input_dir: "D:\\icloud\\iCloudDrive\\Desktop\\recorder-file"
-  # 主输出目录（SynologyDrive）
-  output_dir: "D:\\SynologyDrive\\行业研究\\recorder-file output"
-  # 镜像输出目录（iCloud，与主目录保持同步）
-  output_mirror: "D:\\icloud\\iCloudDrive\\Desktop\\recorder-file output"
+  # 录音文件输入目录
+  input_dir: "/Users/duwei/Desktop/recorder-file"
+  # 主输出目录（NAS）
+  output_dir: "/Users/duwei/Library/CloudStorage/SynologyDrive-duwei/行业研究/recorder-file output"
+  # 镜像输出目录（桌面）
+  output_mirror: "/Users/duwei/Desktop/recorder-file output"
   # 知识库存储位置（阶段二激活）
-  knowledge_dir: "C:\\Users\\Administrator\\recorder-file\\knowledge_db"
+  knowledge_dir: "/Users/duwei/recorder-file/knowledge_db"
 
 whisper:
   model: medium          # tiny / base / small / medium / large-v3
@@ -21,7 +21,7 @@ ollama:
   max_retries: 3
   chunk_chars: 3000
 
-cache_file: "C:\\Users\\Administrator\\recorder-file\\processed_cache.json"
+cache_file: "/Users/duwei/recorder-file/processed_cache.json"
 
 audio_extensions:
   - .mp3
